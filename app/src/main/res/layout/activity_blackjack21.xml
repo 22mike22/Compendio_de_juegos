@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/textura_roja"
+    tools:context=".Blackjack21.Blackjack21">
+
+    <TextView
+        android:id="@+id/textDelear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/holo_blue_light"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/textJugador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonApostar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="apostar"
+        app:layout_constraintBottom_toTopOf="@+id/textJugador"
+        app:layout_constraintEnd_toStartOf="@+id/buttonPedir"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonDoblar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="doblar"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonApostar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonQuedar"
+        app:layout_constraintTop_toTopOf="@+id/buttonApostar" />
+
+    <Button
+        android:id="@+id/buttonPedir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pedir"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonApostar"
+        app:layout_constraintEnd_toStartOf="@+id/buttonQuedar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonApostar"
+        app:layout_constraintTop_toTopOf="@+id/buttonApostar" />
+
+    <Button
+        android:id="@+id/buttonQuedar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="quedar"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonApostar"
+        app:layout_constraintEnd_toStartOf="@+id/buttonDoblar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonPedir"
+        app:layout_constraintTop_toTopOf="@+id/buttonApostar" />
+
+    <EditText
+        android:id="@+id/editTextApuesta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:hint="Apuesta > 0"
+        android:inputType="number"
+        android:textColor="@android:color/holo_blue_bright"
+        app:layout_constraintBottom_toTopOf="@+id/buttonApostar"
+        app:layout_constraintEnd_toStartOf="@+id/textViewFichas"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewFichas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100000"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextApuesta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/editTextApuesta"
+        app:layout_constraintTop_toTopOf="@+id/editTextApuesta" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="600px"
+        android:layout_height="600px"
+        android:src="@drawable/black"
+        app:layout_constraintBottom_toTopOf="@+id/editTextApuesta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textDelear" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delear"
+        android:textColor="@android:color/holo_blue_bright"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
