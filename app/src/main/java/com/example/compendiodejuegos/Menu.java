@@ -13,8 +13,8 @@ import com.squareup.picasso.Picasso;
 
 public class Menu extends AppCompatActivity implements View.OnClickListener {
     Button botonTic, botonAhorcar;
-    ImageView botonBlackjack;
-    Intent iTic, iAho, iblackjack;
+    ImageView botonBlackjack, btnMates;
+    Intent iTic, iAho, iblackjack, iMates;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +25,15 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
         botonTic = findViewById(R.id.buttonTicTac);
         botonAhorcar = findViewById(R.id.buttonAhorcado);
         botonBlackjack = findViewById(R.id.imagenBlackjack);
+        btnMates= findViewById(R.id.imagenMates);
         iTic = new Intent(this, Tic_tac.class);
         iAho = new Intent(this, Ahorcado.class);
         iblackjack = new Intent(this, Blackjack21.class);
+        iMates = new Intent(this, Mates.class);
         botonTic.setOnClickListener(this);
         botonAhorcar.setOnClickListener(this);
         botonBlackjack.setOnClickListener(this);
+        btnMates.setOnClickListener(this);
 
         Picasso.get().load(R.drawable.blackjack_banner).into(botonBlackjack);
     }
@@ -47,6 +50,9 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
                 break;
             case R.id.imagenBlackjack:
                 startActivity(iblackjack);
+                break;
+                case R.id.imagenMates:
+                startActivity(iMates);
                 break;
         }
     }

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Blackjack21.Blackjack21"></activity>
+        <activity android:name=".Mates"></activity>
+        <activity android:name=".Blackjack21.Blackjack21" />
         <activity android:name=".Ahorcado" />
         <activity android:name=".Tic_tac" />
         <activity android:name=".Menu" />

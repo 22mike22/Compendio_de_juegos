@@ -58,6 +58,16 @@
                 app:layout_constraintTop_toBottomOf="@+id/buttonAhorcado"
                 app:srcCompat="@drawable/blackjack_banner" />
 
+            <ImageView
+                android:id="@+id/imagenMates"
+                android:layout_width="313dp"
+                android:layout_height="148dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imagenBlackjack"
+                app:srcCompat="@drawable/mates" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
@@ -88,4 +98,5 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.05" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
