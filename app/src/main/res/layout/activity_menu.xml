@@ -68,6 +68,14 @@
                 app:layout_constraintTop_toBottomOf="@+id/imagenBlackjack"
                 app:srcCompat="@drawable/mates" />
 
+            <ImageView
+                android:id="@+id/imgAnimal"
+                android:layout_width="159dp"
+                android:layout_height="173dp"
+                app:srcCompat="@drawable/adivinaanimal"
+                tools:layout_editor_absoluteX="106dp"
+                tools:layout_editor_absoluteY="481dp" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

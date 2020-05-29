@@ -13,8 +13,8 @@ import com.squareup.picasso.Picasso;
 
 public class Menu extends AppCompatActivity implements View.OnClickListener {
     Button botonTic, botonAhorcar;
-    ImageView botonBlackjack, btnMates;
-    Intent iTic, iAho, iblackjack, iMates;
+    ImageView botonBlackjack, btnMates,btnAnimal;
+    Intent iTic, iAho, iblackjack, iMates,iAnimal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +26,17 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
         botonAhorcar = findViewById(R.id.buttonAhorcado);
         botonBlackjack = findViewById(R.id.imagenBlackjack);
         btnMates= findViewById(R.id.imagenMates);
+        btnAnimal=findViewById(R.id.imgAnimal);
         iTic = new Intent(this, Tic_tac.class);
         iAho = new Intent(this, Ahorcado.class);
         iblackjack = new Intent(this, Blackjack21.class);
         iMates = new Intent(this, Mates.class);
+        iAnimal=new Intent(this,AdivinaElAnimal.class);
         botonTic.setOnClickListener(this);
         botonAhorcar.setOnClickListener(this);
         botonBlackjack.setOnClickListener(this);
         btnMates.setOnClickListener(this);
+        btnAnimal.setOnClickListener(this);
 
         Picasso.get().load(R.drawable.blackjack_banner).into(botonBlackjack);
     }
@@ -51,8 +54,11 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
             case R.id.imagenBlackjack:
                 startActivity(iblackjack);
                 break;
-                case R.id.imagenMates:
+            case R.id.imagenMates:
                 startActivity(iMates);
+                break;
+            case R.id.imgAnimal:
+                startActivity(iAnimal);
                 break;
         }
     }
