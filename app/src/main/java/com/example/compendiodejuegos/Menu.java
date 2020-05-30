@@ -1,10 +1,12 @@
 package com.example.compendiodejuegos;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -41,6 +43,8 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
         btnAnimal.setOnClickListener(this);
 
         Picasso.get().load(R.drawable.blackjack_banner).into(botonBlackjack);
+        Picasso.get().load(R.drawable.adivinaanimal).into(btnAnimal);
+        Picasso.get().load(R.drawable.mates).into(btnMates);
     }
 
 
@@ -64,4 +68,5 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
                 break;
         }
     }
+
 }
