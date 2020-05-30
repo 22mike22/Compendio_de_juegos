@@ -26,13 +26,24 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Compendio de juegos :D"
+                android:fontFamily="casual"
+                android:text="Every Game Ever"
                 android:textColor="#FA0000"
                 android:textSize="30sp"
                 app:layout_constraintBottom_toTopOf="@+id/buttonEntrar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/buttonEntrar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                app:srcCompat="@drawable/carta" />
 
             <Button
                 android:id="@+id/buttonEntrar"
