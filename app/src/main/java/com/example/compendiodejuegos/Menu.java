@@ -27,11 +27,13 @@ public class Menu extends AppCompatActivity implements View.OnClickListener {
         botonBlackjack = findViewById(R.id.imagenBlackjack);
         btnMates= findViewById(R.id.imagenMates);
         btnAnimal=findViewById(R.id.imgAnimal);
+
         iTic = new Intent(this, Tic_tac.class);
         iAho = new Intent(this, Ahorcado.class);
         iblackjack = new Intent(this, Blackjack21.class);
         iMates = new Intent(this, Mates.class);
         iAnimal=new Intent(this,AdivinaElAnimal.class);
+
         botonTic.setOnClickListener(this);
         botonAhorcar.setOnClickListener(this);
         botonBlackjack.setOnClickListener(this);

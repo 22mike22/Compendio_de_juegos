@@ -18,7 +18,7 @@ public class AdivinaElAnimal extends AppCompatActivity implements View.OnClickLi
     String[] animales={"perro","gato","caballo","tigre","oso","leon","aguila"};
     int intentos=3;
     Button btnAdivinar;
-    TextView txtIntentos;
+    TextView txtIntentos,txtEspera;
     EditText etxtAnimal;
     ImageView imgAnimal;
     int r;
@@ -32,12 +32,10 @@ public class AdivinaElAnimal extends AppCompatActivity implements View.OnClickLi
         txtIntentos=findViewById(R.id.txtIntentos);
         etxtAnimal=findViewById(R.id.etxtAnimal);
         imgAnimal=findViewById(R.id.imgAnimal);
-        txtIntentos.setText(intentos+"");
+        txtEspera=findViewById(R.id.txtEspera);
+        txtIntentos.setText("Tienes "+intentos+" ");
         r=nRadom();
         newGame(r);
-
-        int rAnimal=getResources().getIdentifier(animales[1],"drawable",getPackageName());
-        imgAnimal.setImageResource(rAnimal);
 
         btnAdivinar.setOnClickListener(this);
     }
@@ -51,23 +49,37 @@ public class AdivinaElAnimal extends AppCompatActivity implements View.OnClickLi
         String res=etxtAnimal.getText().toString().toLowerCase();
         if(res.equals(animales[r])){
             Toast.makeText(this, "Adivinaste el animal!", Toast.LENGTH_LONG).show();
-            newGame(r);
+            espera();
         }else {
             Toast.makeText(this, "Animal incorrecto",Toast.LENGTH_LONG).show();
             intentos--;
             txtIntentos.setText(intentos+"");
-            if (intentos==0){
-                finish();
-            }
+        }
+        if (intentos==0){
+            newGame(r);
         }
 
     }
-
-
 
     public void newGame(int n){
         int rAnimal=getResources().getIdentifier(animales[n],"drawable",getPackageName());
         imgAnimal.setImageResource(rAnimal);
 
+    }
+
+    private void espera(){
+        new CountDownTimer(5000,1000){
+
+            @Override
+            public void onTick(long millisUntilFinished) {
+                txtEspera.setText("Nuevo animal en "+(millisUntilFinished/1000));
+            }
+
+            @Override
+            public void onFinish() {
+                r=nRadom();
+                newGame(r);
+            }
+        }.start();
     }
 }
