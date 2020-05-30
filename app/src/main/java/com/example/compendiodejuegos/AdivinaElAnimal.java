@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class AdivinaElAnimal extends AppCompatActivity implements View.OnClickListener {
 
     String[] animales={"perro","gato","caballo","tigre","oso","leon","aguila"};
-    int intentos=3;
+    int intentos;
     Button btnAdivinar;
     TextView txtIntentos,txtEspera;
     EditText etxtAnimal;
@@ -27,6 +27,8 @@ public class AdivinaElAnimal extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adivina_el_animal);
+
+        intentos=3;
 
         btnAdivinar=findViewById(R.id.btnAdivinar);
         txtIntentos=findViewById(R.id.txtIntentos);
@@ -53,10 +55,13 @@ public class AdivinaElAnimal extends AppCompatActivity implements View.OnClickLi
         }else {
             Toast.makeText(this, "Animal incorrecto",Toast.LENGTH_LONG).show();
             intentos--;
-            txtIntentos.setText(intentos+"");
-        }
-        if (intentos==0){
-            newGame(r);
+            txtIntentos.setText("Tienes "+intentos+" ");
+            if (intentos==0){
+                intentos=3;
+                txtIntentos.setText("Tienes "+intentos+" ");
+                r=nRadom();
+                newGame(r);
+            }
         }
 
     }
@@ -64,7 +69,8 @@ public class AdivinaElAnimal extends AppCompatActivity implements View.OnClickLi
     public void newGame(int n){
         int rAnimal=getResources().getIdentifier(animales[n],"drawable",getPackageName());
         imgAnimal.setImageResource(rAnimal);
-
+        txtEspera.setText("");
+        etxtAnimal.setText("");
     }
 
     private void espera(){

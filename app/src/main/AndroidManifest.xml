@@ -14,6 +14,7 @@
         <activity android:name=".Ahorcado" />
         <activity android:name=".Tic_tac" />
         <activity android:name=".Menu" />
+        <activity android:name=".AdivinaElAnimal"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
