@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class AdivinaElAnimal extends AppCompatActivity implements View.OnClickListener {
 
     String[] animales={"perro","gato","caballo","tigre","oso","leon","aguila"};
@@ -24,15 +26,15 @@ public class AdivinaElAnimal extends AppCompatActivity implements View.OnClickLi
     int r;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {mensaje("funciona");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adivina_el_animal);
-
+        mensaje("funciona");
         btnAdivinar=findViewById(R.id.btnAdivinar);
         txtIntentos=findViewById(R.id.txtIntentos);
         etxtAnimal=findViewById(R.id.etxtAnimal);
         imgAnimal=findViewById(R.id.imgAnimal);
-        txtIntentos.setText(intentos+"");
+        txtIntentos.setText(intentos+"");mensaje("funciona");
         r=nRadom();
         newGame(r);
 
@@ -43,7 +45,9 @@ public class AdivinaElAnimal extends AppCompatActivity implements View.OnClickLi
     }
 
     private int nRadom(){
-        return (int)(Math.random()*animales.length);
+        Random r=new Random(System.nanoTime());
+        return r.nextInt(animales.length);
+
     }
 
     @Override
@@ -69,5 +73,10 @@ public class AdivinaElAnimal extends AppCompatActivity implements View.OnClickLi
         int rAnimal=getResources().getIdentifier(animales[n],"drawable",getPackageName());
         imgAnimal.setImageResource(rAnimal);
 
+    }
+
+    private void mensaje(String mensaje){
+        Toast t=Toast.makeText(this,mensaje,Toast.LENGTH_SHORT);
+        t.show();
     }
 }
