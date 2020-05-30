@@ -15,7 +15,9 @@ import android.widget.Toast;
 
 public class AdivinaElAnimal extends AppCompatActivity implements View.OnClickListener {
 
-    String[] animales={"perro","gato","caballo","tigre","oso","leon","aguila"};
+    String[] animales={"perro","gato","caballo","tigre","oso","leon","aguila","avestruz",
+                        "delfin","cocodrilo","delfin","gorila","hipopotamo","leopardo","mono","ornitorrinco",
+            "rana","raton","rinoceronte","serpiente","tortuga","zorro"};
     int intentos;
     Button btnAdivinar;
     TextView txtIntentos,txtEspera;
