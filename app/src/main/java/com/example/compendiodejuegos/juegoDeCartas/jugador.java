@@ -1,5 +1,11 @@
 package com.example.compendiodejuegos.juegoDeCartas;
 
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.compendiodejuegos.R;
+
 import java.util.ArrayList;
 
 public class jugador {
@@ -28,4 +34,6 @@ public class jugador {
 
 
     //se debe usar el jugador.atributo.add();, el .get(); o el .remove();
+
+
 }
