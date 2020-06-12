@@ -67,6 +67,11 @@ public class Mates extends AppCompatActivity {
         tvPregunta.setText("");
         tvPuntos.setText("0 puntos");
 
+        btnResp1.setEnabled(false);
+        btnResp2.setEnabled(false);
+        btnResp3.setEnabled(false);
+        btnResp4.setEnabled(false);
+
 
         View.OnClickListener empezarListener= new View.OnClickListener() {
             @Override
